@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 public class Vehicle {
 
-	@Id // Primary Key
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String vrm;
