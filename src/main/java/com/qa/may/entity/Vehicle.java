@@ -13,7 +13,7 @@ public class Vehicle {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String vrm;
+	private String vrm; // Vehicle Registration Mark
 	private String description;
 	private Double cost;
 
