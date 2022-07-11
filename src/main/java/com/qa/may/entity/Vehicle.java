@@ -22,16 +22,16 @@ public class Vehicle {
 
 	}
 
-	public Vehicle(Integer id, String vrm, String description, Double cost) {
+	public Vehicle(String vrm, String description, Double cost) {
 		super();
-		this.id = id;
 		this.vrm = vrm;
 		this.description = description;
 		this.cost = cost;
 	}
 
-	public Vehicle(String vrm, String description, Double cost) {
+	public Vehicle(Integer id, String vrm, String description, Double cost) {
 		super();
+		this.id = id;
 		this.vrm = vrm;
 		this.description = description;
 		this.cost = cost;

@@ -2,37 +2,39 @@ package com.qa.may.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.qa.may.entity.Vehicle;
+import com.qa.may.repo.VehicleRepo;
 
 @Service
 @Primary
 public class VehicleServiceDB implements VehicleService {
 
+	@Autowired
+	private VehicleRepo repo;
+
 	@Override
 	public Vehicle getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return this.repo.findById(id).get();
 	}
 
 	@Override
 	public List<Vehicle> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.repo.findAll();
 	}
 
 	@Override
 	public Vehicle findByVrm(String vrm) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.repo.findByVrmStartingWithIgnoreCase(vrm);
 	}
 
 	@Override
 	public Vehicle create(Vehicle vehicle) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.repo.save(vehicle);
 	}
 
 	@Override
