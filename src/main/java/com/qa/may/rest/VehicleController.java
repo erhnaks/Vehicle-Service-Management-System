@@ -2,12 +2,17 @@ package com.qa.may.rest;
 
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,10 +31,15 @@ public class VehicleController {
 		return this.service.getById(id);
 	}
 
-	@GetMapping("/carGetAll")
+	@GetMapping("getAll")
 	public List<Vehicle> getAll() {
 
 		return this.service.getAll();
+	}
+
+	@GetMapping("/registration/{vrm}")
+	public Vehicle findByVrm(@PathVariable String vrm) {
+		return this.service.findByVrm(vrm);
 	}
 
 	@PostMapping("/create")
@@ -41,6 +51,26 @@ public class VehicleController {
 
 		return new ResponseEntity<Vehicle>(created, HttpStatus.CREATED);
 
+	}
+
+	@PatchMapping("/updateByPatch/{id}")
+	public Vehicle updateByPatch(@PathVariable("id") int id, @PathParam("vrm") String vrm,
+			@PathParam("description") String description, @PathParam("cost") Double cost) {
+
+		return this.service.updateByPatch(id, vrm, description, cost);
+	}
+
+	@PutMapping("/updateByPut/{id}")
+	public Vehicle updateByPut(@PathVariable("id") int id, @PathParam("vrm") String vrm,
+			@PathParam("description") String description, @PathParam("cost") Double cost) {
+
+		return this.service.updateByPatch(id, vrm, description, cost);
+	}
+
+	@DeleteMapping("/remove/{id}")
+	public ResponseEntity<?> delete(@PathVariable int id) {
+		this.service.delete(id);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
 }
