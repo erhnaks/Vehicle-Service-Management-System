@@ -39,20 +39,33 @@ public class VehicleServiceDB implements VehicleService {
 
 	@Override
 	public Vehicle update(int id, String vrm, String description, Double cost) {
-		// TODO Auto-generated method stub
-		return null;
+		Vehicle toUpdate = this.getById(id);
+
+		if (vrm != null)
+			toUpdate.setVrm(vrm);
+		if (description != null)
+			toUpdate.setDescription(description);
+		if (cost != null)
+			toUpdate.setCost(cost);
+		return this.repo.save(toUpdate);
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-
+		this.repo.deleteById(id);
 	}
 
 	@Override
 	public Vehicle updateByPatch(int id, String vrm, String description, Double cost) {
-		// TODO Auto-generated method stub
-		return null;
+		Vehicle toUpdate = this.getById(id);
+
+		if (vrm != null)
+			toUpdate.setVrm(vrm);
+		if (description != null)
+			toUpdate.setDescription(description);
+		if (cost != null)
+			toUpdate.setCost(cost);
+		return this.repo.save(toUpdate);
 	}
 
 }
