@@ -45,7 +45,7 @@ public class VehicleServiceList implements VehicleService {
 
 		if (vrm != null)
 			toUpdate.setVrm(vrm);
-		if (mileage == 0)
+		if (mileage != 0)
 			toUpdate.setMileage(mileage);
 		if (description != null)
 			toUpdate.setDescription(description);
@@ -60,7 +60,7 @@ public class VehicleServiceList implements VehicleService {
 
 		if (vrm != null)
 			toUpdate.setVrm(vrm);
-		if (mileage == 0)
+		if (mileage != 0)
 			toUpdate.setMileage(mileage);
 		if (description != null)
 			toUpdate.setDescription(description);
