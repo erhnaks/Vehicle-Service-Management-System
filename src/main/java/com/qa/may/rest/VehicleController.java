@@ -54,17 +54,17 @@ public class VehicleController {
 	}
 
 	@PatchMapping("/updateByPatch/{id}")
-	public Vehicle updateByPatch(@PathVariable("id") int id, @PathParam("vrm") String vrm,
+	public Vehicle updateByPatch(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") int mileage, 
 			@PathParam("description") String description, @PathParam("cost") Double cost) {
 
-		return this.service.updateByPatch(id, vrm, description, cost);
+		return this.service.updateByPatch(id, vrm, mileage, description, cost);
 	}
 
 	@PutMapping("/updateByPut/{id}")
-	public Vehicle updateByPut(@PathVariable("id") int id, @PathParam("vrm") String vrm,
+	public Vehicle updateByPut(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") int mileage,
 			@PathParam("description") String description, @PathParam("cost") Double cost) {
 
-		return this.service.updateByPatch(id, vrm, description, cost);
+		return this.service.updateByPatch(id, vrm, mileage, description, cost);
 	}
 
 	@DeleteMapping("/remove/{id}")

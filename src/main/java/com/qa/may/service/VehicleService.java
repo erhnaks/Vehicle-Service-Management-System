@@ -14,10 +14,10 @@ public interface VehicleService {
 
 	Vehicle create(Vehicle vehicle);
 
-	Vehicle update(int id, String vrm, String description, Double cost);
+	Vehicle update(int id, String vrm, int mileage, String description, Double cost);
 
 	void delete(int id);
 
-	Vehicle updateByPatch(int id, String vrm, String description, Double cost);
+	Vehicle updateByPatch(int id, String vrm, int mileage, String description, Double cost);
 
 }

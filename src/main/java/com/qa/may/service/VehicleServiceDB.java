@@ -37,11 +37,18 @@ public class VehicleServiceDB implements VehicleService {
 	}
 
 	@Override
-	public Vehicle update(int id, String vrm, String description, Double cost) {
+	public void delete(int id) {
+		this.repo.deleteById(id);
+	}
+
+	@Override
+	public Vehicle updateByPatch(int id, String vrm, int mileage, String description, Double cost) {
 		Vehicle toUpdate = this.getById(id);
 
 		if (vrm != null)
 			toUpdate.setVrm(vrm);
+		if (mileage != 0)
+			toUpdate.setMileage(mileage);
 		if (description != null)
 			toUpdate.setDescription(description);
 		if (cost != null)
@@ -50,16 +57,14 @@ public class VehicleServiceDB implements VehicleService {
 	}
 
 	@Override
-	public void delete(int id) {
-		this.repo.deleteById(id);
-	}
+	public Vehicle update(int id, String vrm, int mileage, String description, Double cost) {
 
-	@Override
-	public Vehicle updateByPatch(int id, String vrm, String description, Double cost) {
 		Vehicle toUpdate = this.getById(id);
 
 		if (vrm != null)
 			toUpdate.setVrm(vrm);
+		if (mileage != 0)
+			toUpdate.setMileage(mileage);
 		if (description != null)
 			toUpdate.setDescription(description);
 		if (cost != null)
