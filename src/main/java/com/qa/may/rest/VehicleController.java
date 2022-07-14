@@ -31,7 +31,7 @@ public class VehicleController {
 		return this.service.getById(id);
 	}
 
-	@GetMapping("getAll")
+	@GetMapping("/getAll")
 	public List<Vehicle> getAll() {
 
 		return this.service.getAll();
@@ -54,17 +54,17 @@ public class VehicleController {
 	}
 
 	@PatchMapping("/updateByPatch/{id}")
-	public Vehicle updateByPatch(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") int mileage, 
+	public Vehicle updateByPatch(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") Integer mileage, 
 			@PathParam("description") String description, @PathParam("cost") Double cost) {
 
 		return this.service.updateByPatch(id, vrm, mileage, description, cost);
 	}
 
-	@PutMapping("/updateByPut/{id}")
-	public Vehicle updateByPut(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") int mileage,
+	@PutMapping("/update/{id}")
+	public Vehicle update(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") Integer mileage,
 			@PathParam("description") String description, @PathParam("cost") Double cost) {
 
-		return this.service.updateByPatch(id, vrm, mileage, description, cost);
+		return this.service.update(id, vrm, mileage, description, cost);
 	}
 
 	@DeleteMapping("/remove/{id}")

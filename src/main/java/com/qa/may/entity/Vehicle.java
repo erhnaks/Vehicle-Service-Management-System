@@ -1,7 +1,5 @@
 package com.qa.may.entity;
 
-import java.util.Objects;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -78,25 +76,6 @@ public class Vehicle {
 
 	public void setCost(Double cost) {
 		this.cost = cost;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(cost, description, id, mileage, vrm);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Vehicle other = (Vehicle) obj;
-		return Objects.equals(cost, other.cost) && Objects.equals(description, other.description)
-				&& Objects.equals(id, other.id) && Objects.equals(mileage, other.mileage)
-				&& Objects.equals(vrm, other.vrm);
 	}
 
 	@Override

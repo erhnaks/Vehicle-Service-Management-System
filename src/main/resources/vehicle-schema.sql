@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS `vehicle` CASCADE;
 CREATE TABLE `vehicle` (
 	`id` INTEGER UNIQUE PRIMARY KEY AUTO_INCREMENT, 
 	`vrm` VARCHAR(255),
-	`cost` INTEGER,
+	`mileage` INTEGER,
 	`description` VARCHAR(255), 
 	`cost` DOUBLE 
 	
