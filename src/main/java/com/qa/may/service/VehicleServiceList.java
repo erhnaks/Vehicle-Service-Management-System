@@ -38,12 +38,15 @@ public class VehicleServiceList implements VehicleService {
 		return this.cars.get(this.cars.size() - 1);
 	}
 
+
 	@Override
-	public Vehicle update(int id, String vrm, String description, Double cost) {
+	public Vehicle update(int id, String vrm, int mileage, String description, Double cost) {
 		Vehicle toUpdate = this.cars.get(id);
 
 		if (vrm != null)
 			toUpdate.setVrm(vrm);
+		if (mileage == 0)
+			toUpdate.setMileage(mileage);
 		if (description != null)
 			toUpdate.setDescription(description);
 		if (cost != null)
@@ -51,24 +54,25 @@ public class VehicleServiceList implements VehicleService {
 		return toUpdate;
 	}
 
+	@Override
+	public Vehicle updateByPatch(int id, String vrm, int mileage, String description, Double cost) {
+		Vehicle toUpdate = this.cars.get(id);
+
+		if (vrm != null)
+			toUpdate.setVrm(vrm);
+		if (mileage == 0)
+			toUpdate.setMileage(mileage);
+		if (description != null)
+			toUpdate.setDescription(description);
+		if (cost != null)
+			toUpdate.setCost(cost);
+		return toUpdate;
+	}
+	
 	@Override
 	public void delete(int id) {
 		this.cars.remove(id);
 	}
 
-	@Override
-	public Vehicle updateByPatch(int id, String vrm, String description, Double cost) {
-
-		Vehicle toUpdate = this.cars.get(id);
-
-		if (vrm != null)
-			toUpdate.setVrm(vrm);
-		if (description != null)
-			toUpdate.setDescription(description);
-		if (cost != null)
-			toUpdate.setCost(cost);
-		return toUpdate;
-
-	}
 
 }

@@ -14,6 +14,7 @@ public class Vehicle {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String vrm; // Vehicle Registration Mark
+	private Integer mileage;
 	private String description;
 	private Double cost;
 
@@ -22,17 +23,19 @@ public class Vehicle {
 
 	}
 
-	public Vehicle(String vrm, String description, Double cost) {
+	public Vehicle(Integer id, String vrm, Integer mileage, String description, Double cost) {
 		super();
+		this.id = id;
 		this.vrm = vrm;
+		this.mileage = mileage;
 		this.description = description;
 		this.cost = cost;
 	}
 
-	public Vehicle(Integer id, String vrm, String description, Double cost) {
+	public Vehicle(String vrm, Integer mileage, String description, Double cost) {
 		super();
-		this.id = id;
 		this.vrm = vrm;
+		this.mileage = mileage;
 		this.description = description;
 		this.cost = cost;
 	}
@@ -53,6 +56,14 @@ public class Vehicle {
 		this.vrm = vrm;
 	}
 
+	public Integer getMileage() {
+		return mileage;
+	}
+
+	public void setMileage(Integer mileage) {
+		this.mileage = mileage;
+	}
+
 	public String getDescription() {
 		return description;
 	}
@@ -71,7 +82,7 @@ public class Vehicle {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(cost, description, id, vrm);
+		return Objects.hash(cost, description, id, mileage, vrm);
 	}
 
 	@Override
@@ -84,12 +95,14 @@ public class Vehicle {
 			return false;
 		Vehicle other = (Vehicle) obj;
 		return Objects.equals(cost, other.cost) && Objects.equals(description, other.description)
-				&& Objects.equals(id, other.id) && Objects.equals(vrm, other.vrm);
+				&& Objects.equals(id, other.id) && Objects.equals(mileage, other.mileage)
+				&& Objects.equals(vrm, other.vrm);
 	}
 
 	@Override
 	public String toString() {
-		return "Vehicle [id=" + id + ", vrm=" + vrm + ", description=" + description + ", cost=" + cost + "]";
+		return "Vehicle [id=" + id + ", vrm=" + vrm + ", mileage=" + mileage + ", description=" + description
+				+ ", cost=" + cost + "]";
 	}
 
 }
