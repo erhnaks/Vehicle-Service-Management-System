@@ -1,7 +1,9 @@
 package com.qa.may.service;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -10,7 +12,7 @@ import com.qa.may.entity.Vehicle;
 @Service
 public class VehicleServiceList implements VehicleService {
 
-	private List<Vehicle> cars = new LinkedList<>();
+	private Map<Integer, Vehicle> cars = new HashMap<>();
 
 	@Override
 	public Vehicle getById(int id) {
@@ -19,12 +21,12 @@ public class VehicleServiceList implements VehicleService {
 
 	@Override
 	public List<Vehicle> getAll() {
-		return this.cars;
+		return new ArrayList<Vehicle>(this.cars.values());
 	}
 
 	@Override
 	public Vehicle findByVrm(String vrm) {
-		for (Vehicle vehicle : this.cars) {
+		for (Vehicle vehicle : this.cars.values()) {
 			if (vehicle.getVrm().equals(vrm))
 
 				return vehicle;
@@ -34,8 +36,8 @@ public class VehicleServiceList implements VehicleService {
 
 	@Override
 	public Vehicle create(Vehicle vehicle) {
-		this.cars.add(vehicle);
-		return this.cars.get(this.cars.size() - 1);
+		this.cars.put(vehicle.getId(), vehicle);
+		return this.cars.get(vehicle.getId());
 	}
 
 
@@ -51,6 +53,7 @@ public class VehicleServiceList implements VehicleService {
 			toUpdate.setDescription(description);
 		if (cost != null)
 			toUpdate.setCost(cost);
+		this.cars.put(id, toUpdate);
 		return toUpdate;
 	}
 
@@ -66,6 +69,7 @@ public class VehicleServiceList implements VehicleService {
 			toUpdate.setDescription(description);
 		if (cost != null)
 			toUpdate.setCost(cost);
+		this.cars.put(id, toUpdate);
 		return toUpdate;
 	}
 	
