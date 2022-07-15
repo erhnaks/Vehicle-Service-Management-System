@@ -40,7 +40,7 @@ public class VehicleServiceList implements VehicleService {
 
 
 	@Override
-	public Vehicle update(int id, String vrm, int mileage, String description, Double cost) {
+	public Vehicle update(int id, String vrm, Integer mileage, String description, Double cost) {
 		Vehicle toUpdate = this.cars.get(id);
 
 		if (vrm != null)
@@ -55,7 +55,7 @@ public class VehicleServiceList implements VehicleService {
 	}
 
 	@Override
-	public Vehicle updateByPatch(int id, String vrm, int mileage, String description, Double cost) {
+	public Vehicle updateByPatch(int id, String vrm, Integer mileage, String description, Double cost) {
 		Vehicle toUpdate = this.cars.get(id);
 
 		if (vrm != null)

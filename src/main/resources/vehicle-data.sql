@@ -9,9 +9,9 @@ INSERT INTO `vehicle` (
 VALUES (
 	default,
 	'LT68KUD',
-	64800,
-	'Oil and air filter has been changed',
-	 89.00
+	1000,
+	'Serviced',
+	 99.00
 );
 
 
