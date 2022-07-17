@@ -42,12 +42,12 @@ public class VehicleControllerIntegrationTest {
 
 	@Test
 	void testCreate() throws Exception {
-		Vehicle testVehicle = new Vehicle("VU13VYB", 1000, "Serviced", 19.99);
+		Vehicle testVehicle = new Vehicle("VU13VYB",  1000.87, "Serviced", 19.99);
 		String testVehicleAsJSON = this.mapper.writeValueAsString(testVehicle);
 		RequestBuilder req = post("/create").content(testVehicleAsJSON).contentType(MediaType.APPLICATION_JSON);
 
 		ResultMatcher checkStatus = MockMvcResultMatchers.status().is(201);
-		Vehicle createdVehicle = new Vehicle(2, "VU13VYB", 1000, "Serviced", 19.99);
+		Vehicle createdVehicle = new Vehicle(2, "VU13VYB", (double) 1000.87, "Serviced", 19.99);
 		String createdVehicleAsJSON = this.mapper.writeValueAsString(createdVehicle);
 		ResultMatcher checkBody = MockMvcResultMatchers.content().json(createdVehicleAsJSON);
 
@@ -56,21 +56,21 @@ public class VehicleControllerIntegrationTest {
 
 	@Test
 	void testUpdate() throws Exception {
-		Vehicle updatedVehicle = new Vehicle(1, "LM68ESN", 1000, "Serviced", 9.99);
+		Vehicle updatedVehicle = new Vehicle(1, "LM68ESN", 1000.89, "Serviced", 9.99);
 		String toJSON = this.mapper.writeValueAsString(updatedVehicle);
 		ResultMatcher checkBody = MockMvcResultMatchers.content().json(toJSON);
 
-		this.mvc.perform(put("/update/1?vrm=LM68ESN&mileage=1000&description=Serviced&cost=9.99")).andExpect(checkBody)
+		this.mvc.perform(put("/update/1?vrm=LM68ESN&mileage=1000.89&description=Serviced&cost=9.99")).andExpect(checkBody)
 				.andExpect(status().isOk());
 	}
 
 	@Test
 	void testUpdateByPatch() throws Exception {
-		Vehicle updatedVehicle = new Vehicle(1, "LM68ESN", 1000, "Serviced", 9.99);
+		Vehicle updatedVehicle = new Vehicle(1, "LM68ESN", 1000.80, "Serviced", 9.99);
 		String toJSON = this.mapper.writeValueAsString(updatedVehicle);
 		ResultMatcher checkBody = MockMvcResultMatchers.content().json(toJSON);
 
-		this.mvc.perform(patch("/updateByPatch/1?vrm=LM68ESN&mileage=1000&description=Serviced&cost=9.99"))
+		this.mvc.perform(patch("/updateByPatch/1?vrm=LM68ESN&mileage=1000.80&description=Serviced&cost=9.99"))
 				.andExpect(checkBody).andExpect(status().isOk());
 	}
 
@@ -78,7 +78,7 @@ public class VehicleControllerIntegrationTest {
 	void testReadByAll() throws Exception {
 
 		List<Vehicle> readVehicles = new ArrayList<>();
-		readVehicles.add(new Vehicle(1, "LT68KUD", 1000, "Serviced", 99.00));
+		readVehicles.add(new Vehicle(1, "LT68KUD", 1000.00, "Serviced", 99.00));
 		String createdVehicleAsJSON = this.mapper.writeValueAsString(readVehicles);
 
 		this.mvc.perform(get("/getAll")).andExpect(content().json(createdVehicleAsJSON)).andExpect(status().isOk());
@@ -88,7 +88,7 @@ public class VehicleControllerIntegrationTest {
 	@Test
 	void testReadById() throws Exception {
 
-		Vehicle readVehicle = new Vehicle(1, "LT68KUD", 1000, "Serviced", 99.00);
+		Vehicle readVehicle = new Vehicle(1, "LT68KUD", 1000.00, "Serviced", 99.00);
 		String createdVehicleAsJSON = this.mapper.writeValueAsString(readVehicle);
 
 		this.mvc.perform(get("/readById/1")).andExpect(content().json(createdVehicleAsJSON)).andExpect(status().isOk());
@@ -98,7 +98,7 @@ public class VehicleControllerIntegrationTest {
 	@Test
 	void testFindByVrm() throws Exception {
 
-		Vehicle readVehicleByVrm = new Vehicle(1, "LT68KUD", 1000, "Serviced", 99.00);
+		Vehicle readVehicleByVrm = new Vehicle(1, "LT68KUD", 1000.00, "Serviced", 99.00);
 		String createdVehicleAsJSON = this.mapper.writeValueAsString(readVehicleByVrm);
 
 		this.mvc.perform(get("/registration/lt68kud")).andExpect(content().json(createdVehicleAsJSON))

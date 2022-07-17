@@ -7,6 +7,7 @@ import javax.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.may.entity.Vehicle;
 import com.qa.may.service.VehicleService;
-
+@CrossOrigin
 @RestController
 public class VehicleController {
 
@@ -54,14 +55,14 @@ public class VehicleController {
 	}
 
 	@PatchMapping("/updateByPatch/{id}")
-	public Vehicle updateByPatch(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") Integer mileage, 
+	public Vehicle updateByPatch(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") Double mileage, 
 			@PathParam("description") String description, @PathParam("cost") Double cost) {
 
 		return this.service.updateByPatch(id, vrm, mileage, description, cost);
 	}
 
 	@PutMapping("/update/{id}")
-	public Vehicle update(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") Integer mileage,
+	public Vehicle update(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") Double mileage,
 			@PathParam("description") String description, @PathParam("cost") Double cost) {
 
 		return this.service.update(id, vrm, mileage, description, cost);

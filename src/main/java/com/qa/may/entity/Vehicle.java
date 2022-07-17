@@ -12,7 +12,7 @@ public class Vehicle {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String vrm; // Vehicle Registration Mark
-	private Integer mileage;
+	private Double mileage;
 	private String description;
 	private Double cost;
 
@@ -21,7 +21,7 @@ public class Vehicle {
 
 	}
 
-	public Vehicle(Integer id, String vrm, Integer mileage, String description, Double cost) {
+	public Vehicle(Integer id, String vrm, Double mileage, String description, Double cost) {
 		super();
 		this.id = id;
 		this.vrm = vrm;
@@ -30,7 +30,7 @@ public class Vehicle {
 		this.cost = cost;
 	}
 
-	public Vehicle(String vrm, Integer mileage, String description, Double cost) {
+	public Vehicle(String vrm, Double mileage, String description, Double cost) {
 		super();
 		this.vrm = vrm;
 		this.mileage = mileage;
@@ -54,11 +54,11 @@ public class Vehicle {
 		this.vrm = vrm;
 	}
 
-	public Integer getMileage() {
+	public Double getMileage() {
 		return mileage;
 	}
 
-	public void setMileage(Integer mileage) {
+	public void setMileage(Double mileage) {
 		this.mileage = mileage;
 	}
 

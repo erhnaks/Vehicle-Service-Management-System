@@ -42,7 +42,7 @@ public class VehicleServiceDB implements VehicleService {
 	}
 
 	@Override
-	public Vehicle updateByPatch(int id, String vrm, Integer mileage, String description, Double cost) {
+	public Vehicle updateByPatch(int id, String vrm, Double mileage, String description, Double cost) {
 		Vehicle toUpdate = this.getById(id);
 
 		if (vrm != null)
@@ -57,8 +57,7 @@ public class VehicleServiceDB implements VehicleService {
 	}
 
 	@Override
-	public Vehicle update(int id, String vrm, Integer mileage, String description, Double cost) {
-
+	public Vehicle update(int id, String vrm, Double mileage, String description, Double cost) {
 		Vehicle toUpdate = this.getById(id);
 
 		if (vrm != null)

@@ -25,7 +25,7 @@ public class VehicleServiceListTest {
 
 	@BeforeEach
 	public void initial() {
-		Vehicle vehicle = new Vehicle(1, "LT68KUD", 1000, "Serviced", 9.99);
+		Vehicle vehicle = new Vehicle(1, "LT68KUD", 1000.00, "Serviced", 9.99);
 
 		vehicleService.create(vehicle);
 	}
@@ -66,12 +66,12 @@ public class VehicleServiceListTest {
 	@Test
 	public void update_ShouldReturnUpdated() {
 
-		Vehicle result = vehicleService.update(1, "LM68", 1000, "Serviced", 10.00);
+		Vehicle result = vehicleService.update(1, "LM68", 1000.00, "Serviced", 10.00);
 
 		assertNotNull(result);
 		assertEquals(1, result.getId());
 		assertEquals("LM68", result.getVrm());
-		assertEquals(1000, result.getMileage());
+		assertEquals(1000.00, result.getMileage());
 		assertEquals("Serviced", result.getDescription());
 		assertEquals(10.00, result.getCost());
 	}
@@ -79,12 +79,12 @@ public class VehicleServiceListTest {
 	@Test
 	public void updateByPatch_ShouldReturnUpdated() {
 
-		Vehicle result = vehicleService.updateByPatch(1, "XX10XXX", 2000, "Oil Changed", 99.00);
+		Vehicle result = vehicleService.updateByPatch(1, "XX10XXX", 2000.00, "Oil Changed", 99.00);
 
 		assertNotNull(result);
 		assertEquals(1, result.getId());
 		assertEquals("XX10XXX", result.getVrm());
-		assertEquals(2000, result.getMileage());
+		assertEquals(2000.00, result.getMileage());
 		assertEquals("Oil Changed", result.getDescription());
 		assertEquals(99.00, result.getCost());
 	}

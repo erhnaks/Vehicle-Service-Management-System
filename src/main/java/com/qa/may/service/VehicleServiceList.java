@@ -41,41 +41,43 @@ public class VehicleServiceList implements VehicleService {
 	}
 
 
-	@Override
-	public Vehicle update(int id, String vrm, Integer mileage, String description, Double cost) {
-		Vehicle toUpdate = this.cars.get(id);
 
-		if (vrm != null)
-			toUpdate.setVrm(vrm);
-		if (mileage != 0)
-			toUpdate.setMileage(mileage);
-		if (description != null)
-			toUpdate.setDescription(description);
-		if (cost != null)
-			toUpdate.setCost(cost);
-		this.cars.put(id, toUpdate);
-		return toUpdate;
-	}
-
-	@Override
-	public Vehicle updateByPatch(int id, String vrm, Integer mileage, String description, Double cost) {
-		Vehicle toUpdate = this.cars.get(id);
-
-		if (vrm != null)
-			toUpdate.setVrm(vrm);
-		if (mileage != 0)
-			toUpdate.setMileage(mileage);
-		if (description != null)
-			toUpdate.setDescription(description);
-		if (cost != null)
-			toUpdate.setCost(cost);
-		this.cars.put(id, toUpdate);
-		return toUpdate;
-	}
 	
 	@Override
 	public void delete(int id) {
 		this.cars.remove(id);
+	}
+
+	@Override
+	public Vehicle updateByPatch(int id, String vrm, Double mileage, String description, Double cost) {
+		Vehicle toUpdate = this.cars.get(id);
+
+		if (vrm != null)
+			toUpdate.setVrm(vrm);
+		if (mileage != 0)
+			toUpdate.setMileage(mileage);
+		if (description != null)
+			toUpdate.setDescription(description);
+		if (cost != null)
+			toUpdate.setCost(cost);
+		this.cars.put(id, toUpdate);
+		return toUpdate;
+	}
+
+	@Override
+	public Vehicle update(int id, String vrm, Double mileage, String description, Double cost) {
+		Vehicle toUpdate = this.cars.get(id);
+
+		if (vrm != null)
+			toUpdate.setVrm(vrm);
+		if (mileage != 0)
+			toUpdate.setMileage(mileage);
+		if (description != null)
+			toUpdate.setDescription(description);
+		if (cost != null)
+			toUpdate.setCost(cost);
+		this.cars.put(id, toUpdate);
+		return toUpdate;
 	}
 
 
