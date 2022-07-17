@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import com.qa.may.entity.Vehicle;
+import com.qa.may.rest.VehicleController;
 
 @SpringBootTest(classes = VehicleServiceList.class)
 @ActiveProfiles("test")
@@ -87,5 +88,19 @@ public class VehicleServiceListTest {
 		assertEquals("Oil Changed", result.getDescription());
 		assertEquals(99.00, result.getCost());
 	}
+	
+	@Test
+	public void deleteTest_ShouldDelete() {
+		vehicleService.delete(1);
+		
+		return;
+		
+		
+	
+	}
+	
+	
+	
+	
 
 }
