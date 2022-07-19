@@ -9,6 +9,7 @@
 * [MySQL Database](#MySQL-Database)
 * [Project Management](#Project-Management)
 * [Tests](#Tests)
+* [SonarQube](#SonarQube)
 * [Deployment](#Deployment)
 * [Built With](#Built-With)
 * [Versioning](#Versioning)
@@ -72,9 +73,9 @@ Jira Kanban board and GitHub was used for project management including GitHub Sm
 
 ### Test Coverage 
 
-##### 98.2%
+##### 97.8%
 
-![Test-Coverage](https://user-images.githubusercontent.com/97620234/179836737-d4f19721-fbe9-4a49-8142-38cc97d9e46b.png)
+![Test-Coverage](https://user-images.githubusercontent.com/97620234/179840696-b04938b7-cb13-4be0-9eb7-24d6b187cfe9.png)
 
 ### Running the tests
 
@@ -114,6 +115,14 @@ Here is an example of an Integration Test
 		this.mvc.perform(get("/readById/1")).andExpect(content().json(createdVehicleAsJSON)).andExpect(status().isOk());
 ```
 
+## SonarQube
+##### Initial SonarQube Report
+
+![Sonarqube-initial-before-fix](https://user-images.githubusercontent.com/97620234/179843150-fc1a2786-bbd2-4cec-a7ff-7ccd5dad2a7f.png)
+
+##### Final (After-Fix) SonarQube Report
+
+![Sonarqube-after-fixes](https://user-images.githubusercontent.com/97620234/179843285-e13d64f1-f0a3-4ad2-8a10-ffe982172b61.png)
 
 ## Deployment
 
