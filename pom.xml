@@ -53,9 +53,9 @@
             <version>3.8.0.2131</version>
     </dependency>
     <dependency>
-    	<groupId>org.seleniumhq.selenium</groupId>
+    <groupId>org.seleniumhq.selenium</groupId>
     	<artifactId>selenium-java</artifactId>
-    	<version>4.2.0</version>
+    	<version>4.2.0</version><!--$NO-MVN-MAN-VER$-->
 	</dependency>
 
 	</dependencies>
