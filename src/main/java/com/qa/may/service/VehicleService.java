@@ -16,8 +16,6 @@ public interface VehicleService {
 
 	void delete(int id);
 
-	Vehicle updateByPatch(int id, String vrm, Integer mileage, String description, Double cost);
-
 	Vehicle update(int id, String vrm, Integer mileage, String description, Double cost);
 
 }

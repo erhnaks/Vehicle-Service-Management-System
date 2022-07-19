@@ -2,7 +2,6 @@ package com.qa.may.rest;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -62,16 +61,6 @@ public class VehicleControllerIntegrationTest {
 
 		this.mvc.perform(put("/update/1").content(toJSON).contentType(MediaType.APPLICATION_JSON)).andExpect(checkBody)
 				.andExpect(status().isOk());
-	}
-
-	@Test
-	void testUpdateByPatch() throws Exception {
-		Vehicle updatedVehicle = new Vehicle(1, "LM68ESN", 1000, "Serviced", 9.99);
-		String toJSON = this.mapper.writeValueAsString(updatedVehicle);
-		ResultMatcher checkBody = MockMvcResultMatchers.content().json(toJSON);
-
-		this.mvc.perform(patch("/updateByPatch/1?vrm=LM68ESN&mileage=1000&description=Serviced&cost=9.99"))
-				.andExpect(checkBody).andExpect(status().isOk());
 	}
 
 	@Test

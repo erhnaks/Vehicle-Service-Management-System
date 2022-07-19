@@ -72,9 +72,9 @@ Jira Kanban board and GitHub was used for project management including GitHub Sm
 
 ### Test Coverage 
 
-##### 98.2%
+##### 97.8%
 
-![Test-Coverage](https://user-images.githubusercontent.com/97620234/179836737-d4f19721-fbe9-4a49-8142-38cc97d9e46b.png)
+![Test-Coverage](https://user-images.githubusercontent.com/97620234/179840696-b04938b7-cb13-4be0-9eb7-24d6b187cfe9.png)
 
 ### Running the tests
 
