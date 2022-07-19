@@ -62,10 +62,9 @@ public class VehicleController {
 	}
 
 	@PutMapping("/update/{id}")
-	public Vehicle update(@PathVariable("id") int id, @PathParam("vrm") String vrm, @PathParam("mileage") Integer mileage,
-			@PathParam("description") String description, @PathParam("cost") Double cost) {
+	public Vehicle update(@PathVariable("id") int id, @RequestBody Vehicle vehicle) {
 
-		return this.service.update(id, vrm, mileage, description, cost);
+		return this.service.update(id, vehicle.getVrm(), vehicle.getMileage(), vehicle.getDescription(), vehicle.getCost());
 	}
 
 	@DeleteMapping("/remove/{id}")

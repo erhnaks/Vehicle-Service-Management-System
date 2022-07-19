@@ -60,7 +60,7 @@ public class VehicleControllerIntegrationTest {
 		String toJSON = this.mapper.writeValueAsString(updatedVehicle);
 		ResultMatcher checkBody = MockMvcResultMatchers.content().json(toJSON);
 
-		this.mvc.perform(put("/update/1?vrm=LM68ESN&mileage=1000&description=Serviced&cost=9.99")).andExpect(checkBody)
+		this.mvc.perform(put("/update/1").content(toJSON).contentType(MediaType.APPLICATION_JSON)).andExpect(checkBody)
 				.andExpect(status().isOk());
 	}
 
