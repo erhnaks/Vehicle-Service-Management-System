@@ -27,7 +27,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.may.entity.Vehicle;
 
 @SpringBootTest
-@AutoConfigureMockMvc // Setting up the testing class
+@AutoConfigureMockMvc 
 @Sql(scripts = { "classpath:vehicle-schema.sql",
 		"classpath:vehicle-data.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
 @ActiveProfiles("test")
