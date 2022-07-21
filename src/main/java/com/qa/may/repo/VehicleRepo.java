@@ -9,6 +9,6 @@ import com.qa.may.entity.Vehicle;
 
 public interface VehicleRepo extends JpaRepository<Vehicle, Integer> {
 
-	Vehicle findByVrmStartingWithIgnoreCase(String vrm);
+	Vehicle findByVrmStartingWithIgnoreCase(String vrm); //Will help the technician easily search for a record using Vehicle Registration Number;
 
 }
