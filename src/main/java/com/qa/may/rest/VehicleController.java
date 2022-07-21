@@ -24,24 +24,24 @@ public class VehicleController {
 	@Autowired
 	private VehicleService service;
 
-	@GetMapping("/readById/{id}")
+	@GetMapping("/readById/{id}") // To find a record by its Id number;
 	public Vehicle getById(@PathVariable int id) {
 
 		return this.service.getById(id);
 	}
 
-	@GetMapping("/getAll")
+	@GetMapping("/getAll") // Listing all of the saved entry to the database;
 	public List<Vehicle> getAll() {
 
 		return this.service.getAll();
 	}
 
-	@GetMapping("/registration/{vrm}")
+	@GetMapping("/registration/{vrm}") // Find an entry by using Vehicle registration mark;
 	public Vehicle findByVrm(@PathVariable String vrm) {
 		return this.service.findByVrm(vrm);
 	}
 
-	@PostMapping("/create")
+	@PostMapping("/create") //Create an entry to save it to the database;
 	public ResponseEntity<Vehicle> create(@RequestBody Vehicle vehicle) {
 
 		System.out.println("Created: " + vehicle);
@@ -52,14 +52,14 @@ public class VehicleController {
 
 	}
 
-	@PutMapping("/update/{id}")
+	@PutMapping("/update/{id}") // Update an existing entry;
 	public Vehicle update(@PathVariable("id") int id, @RequestBody Vehicle vehicle) {
 
 		return this.service.update(id, vehicle.getVrm(), vehicle.getMileage(), vehicle.getDescription(),
 				vehicle.getCost());
 	}
 
-	@DeleteMapping("/remove/{id}")
+	@DeleteMapping("/remove/{id}") // Remove an entry from the record! It will delete from the database permanently.
 	public ResponseEntity<?> delete(@PathVariable int id) {
 		this.service.delete(id);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);

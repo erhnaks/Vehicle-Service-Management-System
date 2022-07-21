@@ -38,31 +38,32 @@ public class VehicleControllerIntegrationTest {
 
 	@Autowired
 	private ObjectMapper mapper;
-
+	
+	// Testing the create method;
 	@Test
 	void testCreate() throws Exception {
-		Vehicle testVehicle = new Vehicle("VU13VYB", 1000, "Serviced", 19.99);
+		Vehicle testVehicle = new Vehicle("VU13VYB", 1000, "Serviced", 19.99); // Giving a dummy entry data.
 		String testVehicleAsJSON = this.mapper.writeValueAsString(testVehicle);
 		RequestBuilder req = post("/create").content(testVehicleAsJSON).contentType(MediaType.APPLICATION_JSON);
 
 		ResultMatcher checkStatus = MockMvcResultMatchers.status().is(201);
-		Vehicle createdVehicle = new Vehicle(2, "VU13VYB", 1000, "Serviced", 19.99);
+		Vehicle createdVehicle = new Vehicle(2, "VU13VYB", 1000, "Serviced", 19.99); //Excepting the giving data above with an ID.
 		String createdVehicleAsJSON = this.mapper.writeValueAsString(createdVehicle);
 		ResultMatcher checkBody = MockMvcResultMatchers.content().json(createdVehicleAsJSON);
 
 		this.mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 	}
-
+	// Testing update method;
 	@Test
 	void testUpdate() throws Exception {
-		Vehicle updatedVehicle = new Vehicle(1, "LM68ESN", 1000, "Serviced", 9.99);
+		Vehicle updatedVehicle = new Vehicle(1, "LM68ESN", 1000, "Serviced", 9.99); // updating the original data which is given at the application resources for test purposes.
 		String toJSON = this.mapper.writeValueAsString(updatedVehicle);
 		ResultMatcher checkBody = MockMvcResultMatchers.content().json(toJSON);
 
 		this.mvc.perform(put("/update/1").content(toJSON).contentType(MediaType.APPLICATION_JSON)).andExpect(checkBody)
 				.andExpect(status().isOk());
 	}
-
+	// Reading all of the entry test
 	@Test
 	void testReadByAll() throws Exception {
 
@@ -73,7 +74,7 @@ public class VehicleControllerIntegrationTest {
 		this.mvc.perform(get("/getAll")).andExpect(content().json(createdVehicleAsJSON)).andExpect(status().isOk());
 
 	}
-
+	// Reading by Id test;
 	@Test
 	void testReadById() throws Exception {
 
@@ -83,7 +84,8 @@ public class VehicleControllerIntegrationTest {
 		this.mvc.perform(get("/readById/1")).andExpect(content().json(createdVehicleAsJSON)).andExpect(status().isOk());
 
 	} // get url //body
-
+	
+	// Finding an existing entry by vrm test;
 	@Test
 	void testFindByVrm() throws Exception {
 
@@ -94,7 +96,8 @@ public class VehicleControllerIntegrationTest {
 				.andExpect(status().isOk());
 
 	}
-
+	
+	// delete an entry test;
 	@Test
 	void testDelete() throws Exception {
 		this.mvc.perform(delete("/remove/1")).andExpect(status().isNoContent());
