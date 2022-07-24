@@ -2,12 +2,12 @@
 
 let chosenVehicleId = null; //Update functional purpose!
 
-function closeVehicleModal(){ //This function is to enable hide function of the Modal after creating!   
+function closeVehicleModal(){ //This function will close the modal after successful save.   
     const modalElement = document.getElementById("vehicleModal"); 
     const modal = bootstrap.Modal.getInstance(modalElement);
-    modal.hide();
-//Below line is to clear the form after creation.
-    document.getElementById("vrm").value = ""; //This line is to clear the form after creation.
+    modal.hide(); //Modal is hiddened after a successful creation.
+//Below line is to re-assigned fields value to an empty string so the modal fields returns blank.
+    document.getElementById("vrm").value = ""; 
     document.getElementById("mileage").value = "";
     document.getElementById("description").value = "";
     document.getElementById("cost").value = "";
@@ -18,14 +18,14 @@ function closeVehicleModal(){ //This function is to enable hide function of the 
 
 function submitForm(){
 
-  if (!chosenVehicleId) return createService(); //onclick will initiate update function;
-  else updateVehicle(chosenVehicleId);
+  if (!chosenVehicleId) return createService(); 
+  else updateVehicle(chosenVehicleId); //onclick will initiate update function;
 
 
 }
-
+// Below function is to save time and call this function when the vehicle entity is called.
 function writeServiceRow(vehicle) {
-  const vehicleUpdate = encodeURIComponent(JSON.stringify(vehicle)); //Coding the data for the Update payload;
+  const vehicleUpdate = encodeURIComponent(JSON.stringify(vehicle)); //Encoding the data for the Update payload;
   return `
   <tr id="row-${vehicle.id}">
     <td>${vehicle.id}</td>
@@ -42,6 +42,7 @@ function writeServiceRow(vehicle) {
 `;
 }
 
+// Below lines are used to reload the modal fields with the vehicle data when the the user click on update button.
 function fillFormForUpdate(vehiclePayload) {
   document.getElementById('submitButton').innerHTML = "Update";
 
@@ -98,7 +99,9 @@ const updateButtonField = document.querySelector("#row-" + chosenVehicleId + " t
 
 const vehicleUpdate = encodeURIComponent(JSON.stringify({id: chosenVehicleId, vrm, mileage, description, cost}));
 
-updateButtonField.setAttribute('onclick', 'fillFormForUpdate("' + vehicleUpdate + '")');
+updateButtonField.setAttribute('onclick', 'fillFormForUpdate("' + vehicleUpdate + '")'); 
+// UpdateButtonfield function is to reload the updated data onto modal fields.
+
 
 vrmField.innerHTML = vrm;
 mileagefield.innerHTML = mileage;
