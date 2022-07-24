@@ -1,6 +1,7 @@
 # QA 22MayEnable2 Software Core - Practical Project Vehicle Service Management System (VSMS)
 
 
+
 ## Contents:
 * [Project Brief](#Project-Brief)  
 * [Getting Started](#Getting-Started)
@@ -15,25 +16,26 @@
 * [Versioning](#Versioning)
 * [Authors](#Authors)
 * [License](#License)
-* [Acknowledgments](#Acknowledgments)
+* [Acknowledgements](#Acknowledgements)
 
 # Project Brief
 ## Vehicle Service Management System (VSMS)
+![VSMS-Logo](https://user-images.githubusercontent.com/97620234/180649345-c0712a4f-d7d8-4968-a14d-cb297f7167cb.png)
 
-Vehicle Service Management System written in Java. OOP-Based web-application. This codebase was created to demonstrate a full-stack application built with Spring boot + MySQL including CRUD operations.
+Vehicle Service Management System is written in Java. OOP-Based web-application. This codebase was created to demonstrate a full-stack application built with Spring boot + MySQL including full CRUD operations.
 
-The aim of this project was to have a CRUD-based web application, with utilisation of supporting tools, methodologies, and technologies, that encapsulates all fundamental and practical modules covered during training with QA.
+This project aimed to have a CRUD-based web application, with the utilisation of supporting tools, methodologies, and technologies, that encapsulates all fundamental and practical modules covered during my software specialism training with QA.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Please use this link to clone the app [Github-Link-VSMS](https://github.com/erhnaks/Vehicle-Service-Management-System)
+Use this link to clone the project: [GitHub-Link-VSMS](https://github.com/erhnaks/Vehicle-Service-Management-System)
 
 ## Prerequisites
 
 
-You will need the following softwares to build and run this application;
+You will need the following software and tools to build and run this application;
 
 * Java JDK (version 11.0 or higher)
 * Apache Maven
@@ -43,15 +45,11 @@ You will need the following softwares to build and run this application;
 
 ## Installing
 
-1. Clone the repository from [Github-Link](https://github.com/erhnaks/Vehicle-Service-Management-System)
-2. Run it in the command line with the following code
+1. Clone the repository from [GitHub-Link](https://github.com/erhnaks/Vehicle-Service-Management-System)
+2. Run it in the command line with the following command;
 ```
 java -jar 1.0-fat.jar
 ```
-3. Open the project on Eclipse
-
-4. Click on index.hmtl (will open a browser with the application running)
-
 
 ## MySQL Database
 
@@ -59,7 +57,7 @@ java -jar 1.0-fat.jar
 
 ![ERD-Final](https://user-images.githubusercontent.com/97620234/179769923-2ca54991-282d-4eb0-8d6b-ef5c11480357.png)
 
-##### Apllication UML
+##### Application UML
 
 ![VSMS-UML-Diagram](https://user-images.githubusercontent.com/97620234/179770969-0d88def3-7a1f-4cc9-8a3d-21be7af0569c.png)
 
@@ -79,11 +77,12 @@ Jira Kanban board and GitHub was used for project management including GitHub Sm
 
 ### Running the tests
 
-In order to run the test for the application please clone the repository to your local machine by the link given blow;
+To run the test for the application please clone the repository to your local machine by the link given below;
 ```
 https://github.com/erhnaks/IMS-22EnableMay2
 ```
-Once clone is finished, open your command line interface in the project folder and run the following code to initiate the test;
+Once the cloning progress is completed, open your command line interface in the project folder and run the following command to initiate the test;
+
 ```
 mvn test
 ```
@@ -92,7 +91,7 @@ mvn test
 
 These tests are written to test the functions of the application and its methods.
 
-Here is an example of an Integration Test
+### Unit Integration Test Example
 
 ```
 @Test
@@ -126,8 +125,6 @@ Here is an example of an Integration Test
 
 ## Deployment
 
-
-
 Maven Deployment Tool has been used to deploy this application.
 
 ## Front End Visual
@@ -149,7 +146,7 @@ Maven Deployment Tool has been used to deploy this application.
 
 ## Versioning
 
-GitHub Version Control [Github](http://github.com) for versioning.
+GitHub Version Control [GitHub](http://github.com) for versioning.
 
 ## Authors
 
@@ -161,6 +158,6 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 *For help in [Choosing a license](https://choosealicense.com/)*
 
-## Acknowledgments
+## Acknowledgements
 
 * Special thanks to QA, Jordan Harrison and Jordan Benbelaid.
