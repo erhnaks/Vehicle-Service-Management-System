@@ -37,7 +37,7 @@ public class VehicleController {
 	}
 
 	@GetMapping("/registration/{vrm}") // Find an entry by using Vehicle registration mark;
-	public Vehicle findByVrm(@PathVariable String vrm) {
+	public List<Vehicle> findByVrm(@PathVariable String vrm) {
 		return this.service.findByVrm(vrm);
 	}
 

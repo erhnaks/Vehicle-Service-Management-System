@@ -10,7 +10,7 @@ public interface VehicleService {
 
 	List<Vehicle> getAll();
 
-	Vehicle findByVrm(String vrm);
+	List<Vehicle> findByVrm(String vrm);
 
 	Vehicle create(Vehicle vehicle);
 

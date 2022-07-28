@@ -89,7 +89,8 @@ public class VehicleControllerIntegrationTest {
 	@Test
 	void testFindByVrm() throws Exception {
 
-		Vehicle readVehicleByVrm = new Vehicle(1, "LT68KUD", 1000, "Serviced", 99.00);
+		List<Vehicle> readVehicleByVrm = new ArrayList< Vehicle>();
+		readVehicleByVrm.add(new Vehicle(1, "LT68KUD", 1000, "Serviced", 99.00));
 		String createdVehicleAsJSON = this.mapper.writeValueAsString(readVehicleByVrm);
 
 		this.mvc.perform(get("/registration/lt68kud")).andExpect(content().json(createdVehicleAsJSON))

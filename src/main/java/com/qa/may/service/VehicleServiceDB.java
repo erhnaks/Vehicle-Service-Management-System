@@ -27,7 +27,7 @@ public class VehicleServiceDB implements VehicleService {
 	}
 
 	@Override
-	public Vehicle findByVrm(String vrm) {
+	public List<Vehicle> findByVrm(String vrm) {
 		return this.repo.findByVrmStartingWithIgnoreCase(vrm);
 	}
 
