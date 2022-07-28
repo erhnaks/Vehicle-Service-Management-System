@@ -12,11 +12,14 @@
 * [Tests](#Tests)
 * [SonarQube](#SonarQube)
 * [Deployment](#Deployment)
+* [Front End Visual](#Front-End-Visual)
 * [Built With](#Built-With)
 * [Versioning](#Versioning)
 * [Authors](#Authors)
 * [License](#License)
 * [Acknowledgements](#Acknowledgements)
+
+
 
 # Project Brief
 ## Vehicle Service Management System (VSMS)
@@ -130,7 +133,7 @@ Maven Deployment Tool has been used to deploy this application.
 ## Front End Visual
 ##### Front web page
 
-![VSMS-front-page](https://user-images.githubusercontent.com/97620234/179775472-9e8e5e86-c39e-4f88-b088-66aabfe05c0c.png)
+![VSMS-front-page](https://user-images.githubusercontent.com/97620234/181634943-451010a7-09f4-484b-aa0e-ccacf192c724.png)
 
 ##### Creating new service report for the companies vehicle
 

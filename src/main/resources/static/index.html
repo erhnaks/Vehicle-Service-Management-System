@@ -17,17 +17,15 @@
     <br />
     <h1 class="h1">Vehicle Service Management System</h1>
     <br />
-    
-    
-    
-      <a href="search.html" class="link-primary" target="_blank"
-    >Search</a>
-    
 
     <div class="container p-6">
       <button class="add" data-bs-toggle="modal" data-bs-target="#vehicleModal">
         Add
-      </button>  <label class="search"> Search: <input id="search_vrm"/> </label> <button onclick="searchVehicle()" type="submit">Submit</button>
+      </button>
+      <label class="search"> Search By VRM: <input id="search_vrm" /> </label>
+      <button class="search_btn" onclick="searchVehicle()" type="submit">
+        Search
+      </button>
 
       <table class="table table-bordered table-striped table-hover" id="table">
         <thead>

@@ -150,18 +150,16 @@ async function searchVehicle() {
   const vrm = document.getElementById("search_vrm").value;
   console.log("search vehicle");
   console.log(vrm);
-  const { data: vehicles } = await axios.get("http://localhost:8080/registration/" +  vrm );
-  
+  const { data: vehicles } = await axios.get(
+    "http://localhost:8080/registration/" + vrm
+  );
 
+  vehicles.forEach(
+    (vehicles) => (tableBodyContent += writeServiceRow(vehicles))
+  );
 
-vehicles.forEach(
-  (vehicles) => (tableBodyContent += writeServiceRow(vehicles))
-);
-
-const tableBody = document.getElementById("table-body");
-tableBody.innerHTML = tableBodyContent
-
-
+  const tableBody = document.getElementById("table-body");
+  tableBody.innerHTML = tableBodyContent;
 }
 
 loadvehicles();
