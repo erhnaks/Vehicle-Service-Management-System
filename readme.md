@@ -33,7 +33,7 @@ This project aimed to have a CRUD-based web application, with the utilisation of
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Use this link to clone the project: [GitHub-Link-VSMS](https://github.com/erhnaks/Vehicle-Service-Management-System)
+Use this link to clone the project: [GitHub-Link-VSMS](git@github.com:erhnaks/Vehicle-Service-Management-System.git)
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ You will need the following software and tools to build and run this application
 
 ## Installing
 
-1. Clone the repository from [GitHub-Link](https://github.com/erhnaks/Vehicle-Service-Management-System)
+1. Clone the repository from [GitHub-Link](git@github.com:erhnaks/Vehicle-Service-Management-System.git)
 2. Run it in the command line with the following command;
 ```
 java -jar 1.0-fat.jar
@@ -82,7 +82,7 @@ Jira Kanban board and GitHub was used for project management including GitHub Sm
 
 To run the test for the application please clone the repository to your local machine by the link given below;
 ```
-https://github.com/erhnaks/IMS-22EnableMay2
+git@github.com:erhnaks/Vehicle-Service-Management-System.git
 ```
 Once the cloning progress is completed, open your command line interface in the project folder and run the following command to initiate the test;
 
@@ -153,7 +153,7 @@ GitHub Version Control [GitHub](http://github.com) for versioning.
 
 ## Authors
 
-* **Erhan Aksu** [erhnaks](https://github.com/erhnaks/Vehicle-Service-Management-System)
+* **Erhan Aksu** [erhnaks](git@github.com:erhnaks/Vehicle-Service-Management-System.git)
 
 ## License
 
